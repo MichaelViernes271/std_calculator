@@ -1,15 +1,36 @@
-*, *::before, *::after {
+/**
+ * Calculator CSS Styles
+ *
+ * This CSS file defines the styles for a calculator application's user interface. It includes
+ * styling for buttons, the grid layout, background, and typography.
+ *
+ * Author: [Your Name]
+ * Date: [Date]
+ */
+
+/* Global Styles */
+
+/* Apply the "border-box" box-sizing model and set font styles for all elements, including pseudo-elements. */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-family: Gotham Rounded, sans-serif;
   font-weight: normal;
 }
 
+/* Body Styles */
+
+/* Reset padding and margin on the body element and set a gradient background. */
 body {
   padding: 0;
   margin: 0;
   background: linear-gradient(to right, #2B3499, #FF6C22);
 }
 
+/* Calculator Grid Styles */
+
+/* Style the calculator grid for layout and responsiveness. */
 .calculator-grid {
   display: grid;
   justify-content: center;
@@ -19,6 +40,9 @@ body {
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
+/* Calculator Button Styles */
+
+/* Style the calculator buttons, including cursor, font size, borders, and background on hover. */
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
@@ -27,10 +51,14 @@ body {
   background-color: rgba(255, 255, 255, .75);
 }
 
+/* Change button background on hover for visual feedback. */
 .calculator-grid > button:hover {
   background-color: rgba(255, 255, 255, .9);
 }
 
+/* Span Styles */
+
+/* Define styles for buttons that span multiple columns. */
 .span-two {
   grid-column: span 2;
 }
@@ -39,6 +67,9 @@ body {
   grid-column: span 3;
 }
 
+/* Output Display Styles */
+
+/* Style the calculator output display, including background, alignment, and typography. */
 .output {
   grid-column: 1 / -1;
   background-color: rgba(0, 0, 0, .75);
@@ -51,11 +82,17 @@ body {
   word-break: break-all;
 }
 
+/* Previous Operand Styles */
+
+/* Style the previous operand text in the output display. */
 .output .previous-operand {
   color: rgba(255, 255, 255, .75);
   font-size: 1.5rem;
 }
 
+/* Current Operand Styles */
+
+/* Style the current operand text in the output display. */
 .output .current-operand {
   color: white;
   font-size: 2.5rem;
