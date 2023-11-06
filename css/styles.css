@@ -1,0 +1,91 @@
+/* References:
+Web Dev Simplified (2019). Build A Calculator With JavaScript Tutorial. https://youtu.be/j59qQ7YWLxw */
+
+*,
+*::before,
+*::after {
+  font-weight: normal;
+  font-family: Gotham Rounded, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, red , blue);
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+:not(body){
+  opacity: 1;
+}
+
+.calculator-grid {
+  align-content: center;
+  min-height: 90vh;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+  box-shadow: 0 0 10px #ffffff;
+  background-color: rgba(222, 170, 255, .9);
+  font-size: 2rem;
+  text-shadow: 1px 1px rgb(56, 56, 56);
+  border: 2px outset white;
+  cursor: pointer;
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, .9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.span-three {
+  grid-column: span 3;
+}
+
+.output {
+  padding: 10px;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  text-shadow:0 0 10px#969696;
+  word-wrap: break-word;
+  word-break: break-all;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.output .current-operand {
+  text-shadow:0 0 10px#000000;
+  font-size: 2.5rem;
+  color: rgb(0, 0, 0); 
+}
+
+.output .previous-operand {
+  text-shadow:0 0 10px#000000;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* Michael Viernes
+06/11/2023 */
+
+footer>p{
+  padding: .5em;
+  display: block;
+  text-align: right;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+}

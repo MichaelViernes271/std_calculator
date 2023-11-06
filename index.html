@@ -2,45 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="author" content="Michael Viernes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="author" content="Michael Viernes">
-  <title>Calculator</title>
-  <link href="styles.css" rel="stylesheet">
-  <script src="script.js" defer></script>
+
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="./js/script.js" defer></script>
+
+  <title>Calculator App</title>
 </head>
 <body>
-  <div class="calculator-grid">
-    <div class="output">
-      <div data-previous-operand class="previous-operand"></div>
-      <div data-current-operand class="current-operand"></div>
-    </div>
+  <section class="calculator-grid">
+    <section class="output">
+      <section data-previous-operand class="previous-operand"></section>
+      <section data-current-operand class="current-operand"></section>
+    </section>
     
     <button data-number>9</button>
     <button data-number>8</button>
     <button data-number>7</button>
-    <button data-operation>*</button>
-    <button data-convert-binary>BIN</button>
+    <button data-operation>÷</button>
+    <button data-convert-binary>bin</button>
     
     <button data-number>6</button>
     <button data-number>5</button>
     <button data-number>4</button>
-    <button data-operation>÷</button>
-    <button data-m-plus>M+</button>
+    <button data-operation>x</button>
+    <button data-m-minus>M-</button>
     
     <button data-number>3</button>
     <button data-number>2</button>
     <button data-number>1</button>
     <button data-operation>+</button>
-    <button data-m-minus>M-</button>
+    <button data-m-plus>M+</button>
     
-    <button data-number class="span-two">.</button>
-    <!-- Author: Michael Viernes -->
     <button data-number>0</button>
+    <button data-number class="span-two">.</button>
     <button data-operation>-</button>
-    <button data-delete>DEL</button>
-    <button data-all-clear class="span-two">AC</button>
+    <button data-delete>🔙️</button>
+    <button data-all-clear class="span-two">C</button>
     <button data-equals class="span-three">=</button>
-  </div>
+
+  </section> <!-- .calculator-grid -->
+  <footer>
+    <p>Copyright &copy; 2023 by Michael Viernes</p>
+  </footer>
 </body>
 </html>
+
+<!-- References:
+Web Dev Simplified (2019). Build A Calculator With JavaScript Tutorial. https://youtu.be/j59qQ7YWLxw -->

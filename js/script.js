@@ -3,7 +3,7 @@
  *
  * This JavaScript file defines a calculator class and handles user interactions
  * to perform basic arithmetic calculations, convert numbers to binary, and manage memory.
- *
+*
  * Author: Viernes, Michael
  * Date: 05/11/2023
  */
@@ -75,8 +75,8 @@ class Calculator {
    */
   compute() {
     let computation
-    const prev = parseFloat(this.previousOperand)
-    const current = parseFloat(this.currentOperand)
+    let prev = parseFloat(this.previousOperand)
+    let current = parseFloat(this.currentOperand)
     if (isNaN(prev) || isNaN(current)) return
     switch (this.operation) {
       case '+':
@@ -85,7 +85,7 @@ class Calculator {
       case '-':
         computation = prev - current
         break
-      case '*':
+      case 'x':
         computation = prev * current
         break
       case '÷':
@@ -103,7 +103,7 @@ class Calculator {
    * Convert the current operand from decimal to binary.
    */
   convertToBinary() {
-    const currentValue = parseFloat(this.currentOperand);
+    let currentValue = parseFloat(this.currentOperand);
     if (!isNaN(currentValue)) {
       this.currentOperand = currentValue.toString(2);
     }
@@ -113,7 +113,7 @@ class Calculator {
    * Add the current operand to the calculator's memory.
    */
   addToMemory() {
-    const currentValue = parseFloat(this.currentOperand);
+    let currentValue = parseFloat(this.currentOperand);
     if (!isNaN(currentValue)) {
       this.memory += currentValue;
       this.currentOperand = this.memory;
@@ -124,7 +124,7 @@ class Calculator {
    * Subtract the current operand from the calculator's memory.
    */
   subtractFromMemory() {
-    const currentValue = parseFloat(this.currentOperand);
+    let currentValue = parseFloat(this.currentOperand);
     if (!isNaN(currentValue)) {
       this.memory -= currentValue;
       this.currentOperand = this.memory;
@@ -140,9 +140,9 @@ class Calculator {
  * @returns {string} - The formatted number for display.
  */
   getDisplayNumber(number) {
-    const stringNumber = number.toString()
-    const integerDigits = parseFloat(stringNumber.split('.')[0])
-    const decimalDigits = stringNumber.split('.')[1]
+    let stringNumber = number.toString()
+    let integerDigits = parseFloat(stringNumber.split('.')[0])
+    let decimalDigits = stringNumber.split('.')[1]
     let integerDisplay
     if (isNaN(integerDigits)) {
       integerDisplay = ''
@@ -174,19 +174,19 @@ class Calculator {
 
 
 // Query various button elements in the HTML for user interactions.
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelector('[data-delete]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operand]')
-const binConvertButton = document.querySelector('[data-convert-binary]')
-const mPlusButton = document.querySelector('[data-m-plus]')
-const mMinusButton = document.querySelector('[data-m-minus]')
+let numberButtons = document.querySelectorAll('[data-number]')
+let operationButtons = document.querySelectorAll('[data-operation]')
+let equalsButton = document.querySelector('[data-equals]')
+let deleteButton = document.querySelector('[data-delete]')
+let allClearButton = document.querySelector('[data-all-clear]')
+let previousOperandTextElement = document.querySelector('[data-previous-operand]')
+let currentOperandTextElement = document.querySelector('[data-current-operand]')
+let binConvertButton = document.querySelector('[data-convert-binary]')
+let mPlusButton = document.querySelector('[data-m-plus]')
+let mMinusButton = document.querySelector('[data-m-minus]')
 
 // Instantiate a calculator Object.
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+let calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 // Event listeners for number buttons.
 numberButtons.forEach(button => {
@@ -222,28 +222,28 @@ deleteButton.addEventListener('click', button => {
   // Handle a click on the delete button by removing the last character from the current operand and updating the display.
   calculator.delete()
   calculator.updateDisplay()
-})
+});
 
 deleteButton.addEventListener('click', button => {
-   // Handle a click on the binary conversion button by converting the current operand to binary and updating the display.
-  calculator.delete()
-  calculator.updateDisplay()
-})
+  // Handle a click on the delete button by removing the last character from the current operand and updating the display.
+  calculator.delete();
+  calculator.updateDisplay();
+});
 
 binConvertButton.addEventListener('click', button => {
-  // Handle binary conversion here
-  calculator.convertToBinary(); 
+  // Handle a click on the binary conversion button by converting the current operand to binary and updating the display.
+  calculator.convertToBinary();
   calculator.updateDisplay();
 });
 
 mPlusButton.addEventListener('click', button => {
   // Handle Memory Add (M+) here
-  calculator.addToMemory(); 
+  calculator.addToMemory();
   calculator.updateDisplay();
 });
 
 mMinusButton.addEventListener('click', button => {
   // Handle Memory Subtract (M-) here
-  calculator.subtractFromMemory(); 
+  calculator.subtractFromMemory();
   calculator.updateDisplay();
 });
